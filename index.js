@@ -4,10 +4,10 @@ const app = express()
 
 app.use(cors())
 app.use(express.json())
+app.use(express.static('dist'))
 
 // custom middleware
 const requestLogger = (request, response, next) => {
-  // console.log('Url', request?.url)
   console.log('Method', request?.method)
   console.log('Path', request?.path)
   console.log('Body', request?.body)
